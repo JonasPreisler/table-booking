@@ -1,6 +1,5 @@
 class OrdersController < ApplicationController
 
-  before_action :authenticate_user!	
 
   def index
     @orders = Order.where(:order_delete=>'0')

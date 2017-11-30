@@ -1,6 +1,5 @@
 class StaffsController < ApplicationController
 
-  before_action :authenticate_user!
   
   def index
     @staffs = Staff.where(:staff_delete=>'0')
