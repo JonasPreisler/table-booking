@@ -59,7 +59,7 @@
                                         <td><%= order.address %></td>
                                         <td><%= order.customer.customer_address %></td>
                                         <td><%= order.first_name %></td>
-                                        <td data-toggle="popover" title="Paid" data-content="<%= order.order_paid %>" data-placement="top"><%= order.last_name %></td>
+                                        <td><%= order.last_name %></td>
                                         <td><%= order.zip %></td>
                                         <td><%= order.delivery_date %></td>
                                         <% if order.order_status == 'Confirm'  %>
