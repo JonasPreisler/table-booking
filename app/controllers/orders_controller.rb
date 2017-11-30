@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
   def update
     @order = Order.find(params[:id])
 
-  	if @order.update(params.require(:order).permit(:customer_id, :staff_id, :delivery_date, :order_amount, :order_paid, :order_status, :order_details, :first_name))
+  	if @order.update(params.require(:order).permit(:customer_id, :staff_id, :delivery_date, :order_amount, :order_paid, :order_status, :order_details, :last_name))
       redirect_to orders_path , :notice=> 'Order was successfully updated.'
     else
       redirect_to edit_orders_path, :alert=> 'Order was not updated.'
