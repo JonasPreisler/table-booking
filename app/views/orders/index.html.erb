@@ -57,10 +57,10 @@
                                         <td>O-<%= order.id %></td>
                                         <td data-toggle="popover" title="Details" data-content="<%= order.order_details %>" data-placement="top"><%= order.customer.customer_name %></td>
                                         <td><%= order.customer.customer_phone %></td>
-                                        <td><%= order.customer.customer_address %></td>
+                                        <td><%= order.gade %></td>
                                         <td><%= order.staff.staff_name %></td>
                                         <td data-toggle="popover" title="Paid" data-content="<%= order.order_paid %>" data-placement="top"><%= order.order_amount %></td>
-                                        <td><%= order.address %></td>
+                                        <td><%= order.zip %></td>
                                         <td><%= order.delivery_date %></td>
                                         <% if order.order_status == 'Confirm'  %>
                                             <td class="text-center"><span class="label label-default"> <%= order.order_status %></span></td>
