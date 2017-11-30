@@ -41,7 +41,7 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Name</th>
-                                        <th>Phone</th>
+                                        <th>Address</th>
                                         <th>Address</th>
                                         <th>First name</th>
                                         <th>Last name</th>
@@ -56,7 +56,7 @@
                                     <tr>
                                         <td>O-<%= order.id %></td>
                                         <td data-toggle="popover" title="Details" data-content="<%= order.order_details %>" data-placement="top"><%= order.customer.customer_name %></td>
-                                        <td><%= order.customer.customer_phone %></td>
+                                        <td><%= order.address %></td>
                                         <td><%= order.customer.customer_address %></td>
                                         <td><%= order.firs_name %></td>
                                         <td data-toggle="popover" title="Paid" data-content="<%= order.order_paid %>" data-placement="top"><%= order.last_name %></td>
