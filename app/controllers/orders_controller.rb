@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(params.require(:order).permit(:customer_id, :staff_id, :delivery_date, :order_amount, :order_paid, :order_status, :order_details, :zip))
+    @order = Order.new(params.require(:order).permit(:customer_id, :staff_id, :delivery_date, :order_amount, :order_paid, :order_status, :order_details, :zip, :address, :city :first_name, :last_name))
 
     if @order.save
       Measurement.create(:order_id=>Order.last.id)
