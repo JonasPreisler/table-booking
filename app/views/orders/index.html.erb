@@ -41,10 +41,10 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Name</th>
-                                        <th>Address</th>
+                                        <th>Phone</th>
                                         <th>Address</th>
                                         <th>First name</th>
-                                        <th>Last name</th>
+                                        <th>Amount</th>
                                         <th>Zip</th>
                                         <th>Delivery Date</th>
                                         <th>Order Status</th>
@@ -56,10 +56,10 @@
                                     <tr>
                                         <td>O-<%= order.id %></td>
                                         <td data-toggle="popover" title="Details" data-content="<%= order.order_details %>" data-placement="top"><%= order.customer.customer_name %></td>
-                                        <td><%= order.address %></td>
+                                        <td><%= order.customer.customer_phone %></td>
                                         <td><%= order.customer.customer_address %></td>
                                         <td><%= order.first_name %></td>
-                                        <td><%= order.last_name %></td>
+                                        <td data-toggle="popover" title="Paid" data-content="<%= order.order_paid %>" data-placement="top"><%= order.order_amount %></td>
                                         <td><%= order.zip %></td>
                                         <td><%= order.delivery_date %></td>
                                         <% if order.order_status == 'Confirm'  %>
