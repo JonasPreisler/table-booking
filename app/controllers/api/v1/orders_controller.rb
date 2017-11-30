@@ -26,7 +26,7 @@ module Api
       private
 
       def order_params
-        params.permit(:customer_id, :staff_id, :delivery_date, :order_amount, :order_paid, :order_status, :order_details, :zip, :address, :city, :first_name, :last_name)
+        params.permit(:customer_id, :staff_id, :delivery_date, :order_amount, :order_paid, :order_status, :order_details, :zip, :address, :first_name)
       end
 
     end
