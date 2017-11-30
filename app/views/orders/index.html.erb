@@ -45,7 +45,7 @@
                                         <th>Address</th>
                                         <th>Assign To</th>
                                         <th>Amount</th>
-                                        <th>Due</th>
+                                        <th>Zip</th>
                                         <th>Delivery Date</th>
                                         <th>Order Status</th>
                                         <th class="text-center">Actions</th>
@@ -60,7 +60,7 @@
                                         <td><%= order.customer.customer_address %></td>
                                         <td><%= order.staff.staff_name %></td>
                                         <td data-toggle="popover" title="Paid" data-content="<%= order.order_paid %>" data-placement="top"><%= order.order_amount %></td>
-                                        <td><%= order.order_amount %></td>
+                                        <td><%= order.zip %></td>
                                         <td><%= order.delivery_date %></td>
                                         <% if order.order_status == 'Confirm'  %>
                                             <td class="text-center"><span class="label label-default"> <%= order.order_status %></span></td>

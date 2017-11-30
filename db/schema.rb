@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170422090424) do
+ActiveRecord::Schema.define(version: 20171130010242) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "customers", force: :cascade do |t|
     t.string   "customer_name"
@@ -20,6 +23,7 @@ ActiveRecord::Schema.define(version: 20170422090424) do
     t.text     "customer_address"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "first_name"
   end
 
   create_table "measurements", force: :cascade do |t|
@@ -41,7 +45,7 @@ ActiveRecord::Schema.define(version: 20170422090424) do
     t.text     "other_measurements", default: "0"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
-    t.index ["order_id"], name: "index_measurements_on_order_id"
+    t.index ["order_id"], name: "index_measurements_on_order_id", using: :btree
   end
 
   create_table "orders", force: :cascade do |t|
@@ -52,11 +56,15 @@ ActiveRecord::Schema.define(version: 20170422090424) do
     t.integer  "order_paid"
     t.string   "order_status"
     t.text     "order_details"
-    t.integer  "order_delete",  default: 0
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.index ["customer_id"], name: "index_orders_on_customer_id"
-    t.index ["staff_id"], name: "index_orders_on_staff_id"
+    t.integer  "order_delete",     default: 0
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "delivery_address"
+    t.string   "address"
+    t.string   "first_name"
+    t.integer  "zip"
+    t.index ["customer_id"], name: "index_orders_on_customer_id", using: :btree
+    t.index ["staff_id"], name: "index_orders_on_staff_id", using: :btree
   end
 
   create_table "salaries", force: :cascade do |t|
@@ -66,7 +74,7 @@ ActiveRecord::Schema.define(version: 20170422090424) do
     t.integer  "salary_paid"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.index ["staff_id"], name: "index_salaries_on_staff_id"
+    t.index ["staff_id"], name: "index_salaries_on_staff_id", using: :btree
   end
 
   create_table "staffs", force: :cascade do |t|
@@ -94,8 +102,8 @@ ActiveRecord::Schema.define(version: 20170422090424) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
 end
