@@ -26,7 +26,7 @@ module Api
       private
 
       def order_params
-        params.permit(:guest, :first_name, :last_name, :gender, :firstname, :lastname, :fb_profile_pic, :fb_id)
+        params.permit(:guest, :first_name, :last_name, :gender, :firstname, :lastname, :fb_profile_pic, :fb_id, :profilepicurl, :messengeruserid, :chatfueluserid)
       end
 
     end
