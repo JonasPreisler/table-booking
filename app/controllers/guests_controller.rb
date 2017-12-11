@@ -1,5 +1,6 @@
 class GuestsController < ApplicationController
   before_action :set_guest, only: [:show, :edit, :update, :destroy]
+  before_filter :current_user, only: [:view]
 
   # GET /guests
   # GET /guests.json
