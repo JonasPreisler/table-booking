@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :events
   namespace 'api' do
     namespace 'v1' do
       resources :orders
       resources :guests
+      resources :events
     end
   end
   
@@ -17,7 +19,7 @@ Rails.application.routes.draw do
   resources :staffs
   resources :salaries
   resources :measurements
-
+  resources :events
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
