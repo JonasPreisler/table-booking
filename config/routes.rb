@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   
   root :to => 'dashboards#index'
 
+  resources :test
   resources :dashboards
   resources :customers
   resources :orders
