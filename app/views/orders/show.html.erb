@@ -64,6 +64,11 @@
                                         <i class="si si-call-end"></i> <%= @order.customer.customer_phone %>
                                     </address>
                                 </div>
+
+                                <div class="col-xs-6 col-sm-4 col-lg-3">
+                                    <p class="h5 push-5"><b>Image</b></p>
+                                    <%= image_tag @order.image.url if @order.image? %>
+                                </div>
                                 <!-- END Company Info -->
 
                                 <!-- Client Info -->
@@ -73,6 +78,8 @@
                                 </div>
                                 <!-- END Client Info -->                                
                             </div>
+
+
                             <!-- END Invoice Info -->
 
                             <!-- Table -->
@@ -87,57 +94,6 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td class="text-center">1</td>
-                                            <td>
-                                                <p class="font-w600 push-10"><%= @order.order_details %></p>
-                                                <div class="text-muted">
-                                                    <% if @order.measurement.neck != '0' %>
-                                                        <span class="font-w600">Neck :</span> <%= @order.measurement.neck %>,
-                                                    <% end %>
-                                                    <% if @order.measurement.sleeve != '0' %>
-                                                        <span class="font-w600">Sleeve :</span> <%= @order.measurement.sleeve %>,
-                                                    <% end %>
-                                                    <% if @order.measurement.bicep != '0' %>
-                                                        <span class="font-w600">Bicep :</span> <%= @order.measurement.bicep %>,
-                                                    <% end %>
-                                                    <% if @order.measurement.wrist != '0' %>
-                                                        <span class="font-w600">Wrist :</span> <%= @order.measurement.wrist %>,
-                                                    <% end %>
-                                                    <% if @order.measurement.length != '0' %>
-                                                        <span class="font-w600">Length :</span> <%= @order.measurement.length %>,
-                                                    <% end %>
-                                                    <% if @order.measurement.shoulder != '0' %>
-                                                        <span class="font-w600">Shoulder :</span> <%= @order.measurement.shoulder %>,
-                                                    <% end %>
-                                                    <% if @order.measurement.chest != '0' %>
-                                                        <span class="font-w600">Chest :</span> <%= @order.measurement.chest %>,
-                                                    <% end %>
-                                                    <% if @order.measurement.waist != '0' %>
-                                                        <span class="font-w600">Waist :</span> <%= @order.measurement.waist %>,
-                                                    <% end %>
-                                                    <% if @order.measurement.hips != '0' %>
-                                                        <span class="font-w600">Hips :</span> <%= @order.measurement.hips %>,
-                                                    <% end %>
-                                                    <% if @order.measurement.thigh != '0' %>
-                                                        <span class="font-w600">Thigh :</span> <%= @order.measurement.thigh %>,
-                                                    <% end %>
-                                                    <% if @order.measurement.crotch != '0' %>
-                                                        <span class="font-w600">Crotch :</span> <%= @order.measurement.crotch %>,
-                                                    <% end %>
-                                                    <% if @order.measurement.ankles != '0' %>
-                                                        <span class="font-w600">Ankles :</span> <%= @order.measurement.ankles %>,
-                                                    <% end %>
-                                                    <% if @order.measurement.inseam != '0' %>
-                                                        <span class="font-w600">Inseam :</span> <%= @order.measurement.inseam %>,
-                                                    <% end %>
-                                                    <% if @order.measurement.outseam != '0' %>
-                                                        <span class="font-w600">Outseam :</span> <%= @order.measurement.outseam %>,
-                                                    <% end %> 
-                                                    <% if @order.measurement.other_measurements != '0' %>
-                                                         <%= @order.measurement.other_measurements %>
-                                                    <% end %>     
-                                                </div>
-                                            </td>
                                             <td class="text-right">$ <%= @order.order_amount %></td>
                                         </tr>
                                         <tr>
