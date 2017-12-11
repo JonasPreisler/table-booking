@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
-  resources :guests
+
   namespace 'api' do
     namespace 'v1' do
       resources :orders
+      resources :guests
     end
   end
   
   root :to => 'dashboards#index'
 
+  resources :guests
   resources :test
   resources :dashboards
   resources :customers
