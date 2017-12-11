@@ -3,13 +3,14 @@ module Api
     class EventsController < ApplicationController
       
       def index
-        event = Event.event('created_at DESC');
+        events = Event.event('created_at DESC');
         render json: {status: 'SUCCESS', message:'Loaded events', data:events},status: :ok
       end
 
       def show
         event = Event.find(params[:id])
         render json: {status: 'SUCCESS', message:'Loaded event', data:event},status: :ok
+        @guests = Guest.all
       end
 
       def create

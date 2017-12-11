@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :tags
+  resources :taggings
   resources :events
   namespace 'api' do
     namespace 'v1' do

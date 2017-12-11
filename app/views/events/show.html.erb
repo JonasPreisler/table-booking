@@ -57,11 +57,13 @@
                 </thead>
 
                 <tbody>
-                    <tr>
-                      <td><%= @event.guest.first_name %></td>
-                      <td><%= @event.guest.last_name %></td>
-                      <td><%= @event.guest.gender %></td>
-                    </tr>
+                    <% @guests.each do |guest| %>
+                        <tr>
+                          <td><%= guest.first_name %></td>
+                          <td><%= guest.last_name %></td>
+                          <td><%= guest.gender %></td>
+                        </tr>
+                    <% end %>
                 </tbody>
               </table>
 
