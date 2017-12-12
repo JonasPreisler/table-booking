@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :guestlists
   resources :tags
   resources :taggings
   resources :events
@@ -12,7 +13,12 @@ Rails.application.routes.draw do
   end
   
   root :to => 'dashboards#index'
-
+  
+  namespace 'event' do
+    namespace 'guestlist' do
+      resources :guests
+    end
+  end
   resources :guests
   resources :test
   resources :dashboards

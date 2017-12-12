@@ -1,3 +1,3 @@
 class Event < ApplicationRecord
-  has_many :guests, dependent: :destroy
+  has_many :guests
 end

@@ -45,27 +45,7 @@
         <div class="block-content table-responsive">
             <table class="table table-striped js-dataTable-full-pagination">
                 
-
-              <table>
-                <thead>
-                  <tr>
-                    <th>First name</th>
-                    <th>Last name</th>
-                    <th>Gender</th>
-                    <th colspan="3"></th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                    <% @guests.each do |guest| %>
-                        <tr>
-                          <td><%= guest.first_name %></td>
-                          <td><%= guest.last_name %></td>
-                          <td><%= guest.gender %></td>
-                        </tr>
-                    <% end %>
-                </tbody>
-              </table>
+            <th><%= @event.guest.first_name if @event.guest? %></th>
 
               <br>
 
