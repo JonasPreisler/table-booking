@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :promoters
   resources :guestlists
   resources :tags
   resources :taggings
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
     namespace 'v1' do
       resources :orders
       resources :guests
+      resources :guestlists
       resources :events
     end
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171211132059) do
+ActiveRecord::Schema.define(version: 20171213034951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20171211132059) do
     t.text     "customer_address"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.string   "first_name"
   end
 
   create_table "events", force: :cascade do |t|
@@ -36,10 +35,13 @@ ActiveRecord::Schema.define(version: 20171211132059) do
   end
 
   create_table "guestlists", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "gender"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "title"
+    t.string   "guest"
+    t.integer  "event_id"
   end
 
   create_table "guests", force: :cascade do |t|
@@ -53,6 +55,8 @@ ActiveRecord::Schema.define(version: 20171211132059) do
     t.string   "profilepicurl"
     t.string   "messengeruserid"
     t.string   "chatfueluserid"
+    t.integer  "guestlist_id"
+    t.string   "guestlist_type"
   end
 
   create_table "measurements", force: :cascade do |t|
@@ -85,12 +89,9 @@ ActiveRecord::Schema.define(version: 20171211132059) do
     t.integer  "order_paid"
     t.string   "order_status"
     t.text     "order_details"
-    t.integer  "order_delete",     default: 0
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.string   "delivery_address"
-    t.string   "address"
-    t.string   "first_name"
+    t.integer  "order_delete",  default: 0
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.integer  "zip"
     t.string   "last_name"
     t.string   "city"
@@ -99,6 +100,12 @@ ActiveRecord::Schema.define(version: 20171211132059) do
     t.string   "image"
     t.index ["customer_id"], name: "index_orders_on_customer_id", using: :btree
     t.index ["staff_id"], name: "index_orders_on_staff_id", using: :btree
+  end
+
+  create_table "promoters", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "salaries", force: :cascade do |t|
@@ -153,4 +160,8 @@ ActiveRecord::Schema.define(version: 20171211132059) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "measurements", "orders"
+  add_foreign_key "orders", "customers"
+  add_foreign_key "orders", "staffs"
+  add_foreign_key "salaries", "staffs"
 end

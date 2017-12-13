@@ -1,6 +1,7 @@
 class Guest < ApplicationRecord
-  has_one :events
-  has_and_belongs_to_many :guestslists
-  has_many :taggings, dependent: :destroy
-  has_many :tags, through: :taggings, dependent: :destroy
+    belongs_to :guestlist, polymorphic: true
+
+    def guestlist_objects
+      Guestlist.where(id: self.guestlist.reject(&:empty?)).map(&:title).join(",")
+    end
 end

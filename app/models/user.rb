@@ -3,4 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  has_many :guests
+  has_many :promoters, through: :guests, source: :event, source_type: 'Event'
+  has_many :promoters, through: :guests, source: :event, source_type: 'Promoter'
+
 end
