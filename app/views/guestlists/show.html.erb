@@ -1,19 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @guestlist.guest.first_name %>
-</p>
+<% @guests.each do |guest| %>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @guestlist.guest.last_name %>
-</p>
+  <p>
+    <strong>First name:</strong>
+    <%= guest.first_name if @guestlist.guest? %>
+  </p>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @guestlist.guest.gender %>
-</p>
+  <p>
+    <strong>Last name:</strong>
+    <%= guest.last_name if @guestlist.guest? %>
+  </p>
 
-<%= link_to 'Edit', edit_guestlist_path(@guestlist) %> |
-<%= link_to 'Back', guestlists_path %>
+  <p>
+    <strong>Gender:</strong>
+    <%= guest.gender if @guestlist.guest? %>
+  </p>
+
+  <%= link_to 'Edit', edit_guestlist_path(@guestlist) %> |
+  <%= link_to 'Back', guestlists_path %>
+<% end %>
