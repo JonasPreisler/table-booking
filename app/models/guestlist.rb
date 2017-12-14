@@ -1,5 +1,6 @@
 class Guestlist < ApplicationRecord
   has_many :guests
+  belongs_to :guest
   belongs_to :event
 
     def event_objects
