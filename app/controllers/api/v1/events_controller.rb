@@ -11,6 +11,7 @@ module Api
         event = Event.find(params[:id])
         render json: {status: 'SUCCESS', message:'Loaded event', data:event},status: :ok
         guests = Guest.all
+        @guestlists = @event.guestlists
       end
 
       def create
@@ -27,7 +28,7 @@ module Api
       private
 
       def order_params
-        params.permit(:event, :guest, :first_name, :last_name, :gender, :date, :title, :guestlist)
+        params.permit(:guest, :first_name, :last_name, :gender, :title, :date, :guestlist_id, :guest_id)
       end
 
     end

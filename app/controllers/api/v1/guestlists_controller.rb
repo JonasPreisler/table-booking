@@ -10,6 +10,7 @@ module Api
       def show
         guestlist = Guestlist.find(params[:id])
         render json: {status: 'SUCCESS', message:'Loaded guestlist', data:guestlist},status: :ok
+        @guests = @guestlist.guests
       end
 
       def create
@@ -26,7 +27,7 @@ module Api
       private
 
       def order_params
-        params.permit(:guestlist, :guest, :first_name, :last_name, :gender, :event_id, :guest_id)
+        params.permit(:first_name, :last_name, :gender, :event_id, :title, :guest_id, :guest)
       end
 
     end
