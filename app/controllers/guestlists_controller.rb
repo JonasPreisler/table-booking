@@ -1,6 +1,5 @@
 class GuestlistsController < ApplicationController
   before_action :set_guestlist, only: [:show, :edit, :update, :destroy]
-  attr_accessible :guests, :guestlist, :guest_id, :first_name, :last_name, :gender, :guestlist_id
 
   # GET /guestlists
   # GET /guestlists.json
