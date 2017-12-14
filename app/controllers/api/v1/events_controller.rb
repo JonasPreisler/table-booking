@@ -15,7 +15,7 @@ module Api
       end
 
       def create
-        event = Event.new(order_params)
+        event = Event.new(event_params)
 
         if event.save
           render json: {status: 'SUCCESS', message:'Saved event', data:event},status: :ok
@@ -27,7 +27,7 @@ module Api
 
       private
 
-      def order_params
+      def event_params
         params.permit(:guest, :first_name, :last_name, :gender, :title, :date, :guestlist_id, :guest_id)
       end
 

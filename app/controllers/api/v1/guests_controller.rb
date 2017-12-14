@@ -13,7 +13,7 @@ module Api
       end
 
       def create
-        guest = Guest.new(order_params)
+        guest = Guest.new(guest_params)
 
         if guest.save
           render json: {status: 'SUCCESS', message:'Saved guest', data:guest},status: :ok
@@ -25,7 +25,7 @@ module Api
 
       private
 
-      def order_params
+      def guest_params
         params.permit(:guest, :guestlist_id, :first_name, :last_name, :gender, :event_id, :guestlist)
       end
 

@@ -16,11 +16,6 @@ Rails.application.routes.draw do
   
   root :to => 'dashboards#index'
   
-  namespace 'event' do
-    namespace 'guestlist' do
-      resources :guests
-    end
-  end
   resources :guests
   resources :test
   resources :dashboards
