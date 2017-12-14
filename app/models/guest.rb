@@ -7,6 +7,6 @@ class Guest < ApplicationRecord
     end
 
     def ambassador_objects
-      Ambassador.where(id: self.ambassador_id.reject(&:empty?)).map(&:id).join(",")
+      Ambassador.where(name: self.ambassador_name.reject(&:empty?)).map(&:name).join(",")
     end
 end
