@@ -7,6 +7,7 @@
 
         <title><%= yield(:title) %> | Get More Guests Through The Door With Messenger</title>
 
+
         <meta name="description" content="Messenger Chatbot">
         <meta name="author" content="Jonas Preisler">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -292,7 +293,13 @@
                         </a>
                     </div>
                     <p class="font-size-20 dtext">Get More Guests Through The Door With Messenger</p>
+                    
+                <br>
+                <%= link_to 'Log In', new_user_session_path, class: "font-size-20 dtext" %>
+                <br><br><br>
+                <%= link_to 'Sign Up', new_user_registration_path, class: "font-size-20 dtext" %>
                 </div>
+
                 <div class="page-login-main">
                     <div class="brand visible-xs">
                         <a class="h3 text-white" href="index.html">
