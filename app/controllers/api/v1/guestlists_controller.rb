@@ -1,7 +1,8 @@
 module Api
   module V1
     class GuestlistsController < ApplicationController
-      
+      attr_accessible :guests, :guestlist, :guest_id, :first_name, :last_name, :gender, :guestlist_id
+
       def index
         guestlists = Guestlist.guestlist('created_at DESC');
         render json: {status: 'SUCCESS', message:'Loaded guestlist', data:guestlists},status: :ok
