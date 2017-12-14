@@ -30,7 +30,7 @@ class DashboardsController < ApplicationController
 
     @guests = Guest.all.count
     @events = Event.all.count
-    @promoters = Promoter.all.count
+    @ambassadors = Ambassador.all.count
     @guestlists = Guestlist.all.count
 
   end
