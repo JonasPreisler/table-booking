@@ -11,7 +11,7 @@ class GuestlistsController < ApplicationController
   # GET /guestlists/1.json
   def show
     @guests = @guestlist.guests
-    @ambassadors = @guestlist.ambassador
+    @ambassadors = @guestlist.ambassadors
   end
 
   # GET /guestlists/new
