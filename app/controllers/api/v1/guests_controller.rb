@@ -1,7 +1,6 @@
 module Api
   module V1
     class GuestsController < ApplicationController
-      attr_accessible :guests, :guestlist, :guest_id, :first_name, :last_name, :gender, :guestlist_id
 
       def index
         guests = Guest.guest('created_at DESC');

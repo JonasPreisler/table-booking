@@ -1,5 +1,4 @@
 class Guestlist < ApplicationRecord
-
   has_many :guests
   belongs_to :event
 
