@@ -45,8 +45,13 @@
         <div class="block-content table-responsive">
             <table class="table table-striped js-dataTable-full-pagination">
                 
-                      <td><%= @event.guest.first_name if @event.guest? %></td>
+                <% @guestlists.each do |guestlists| %>
 
+                  <p>
+                    <strong>ID:</strong>
+                    <%= link_to 'View Guestlist', guestlists %>
+                  </p>
+                <% end %>
               <br>
 
               <%= link_to 'New Guest', new_guest_path %>

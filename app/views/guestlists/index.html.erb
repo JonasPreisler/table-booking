@@ -13,10 +13,11 @@
   <tbody>
     <% @guestlists.each do |guestlist| %>
       <tr>
-        <td><%= 'guestlist' %></td>
-        <td><%= link_to 'Show', guestlist %></td>
+        <td><%= link_to 'guestlist', guestlist %></td>
+        <td>-</td>
         <td><%= link_to 'Edit', edit_guestlist_path(guestlist) %></td>
-        <td><%= link_to 'Destroy', guestlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <td>-</td>
+       <td><%= link_to 'Delete', guestlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

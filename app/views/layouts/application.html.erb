@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
 
-        <title><%= yield(:title) %> | Messenger Chatbot</title>
+        <title><%= yield(:title) %> | Get More Guests Through The Door With Messenger</title>
 
         <meta name="description" content="Messenger Chatbot">
         <meta name="author" content="Jonas Preisler">
@@ -32,12 +32,11 @@
                     <!-- Sidebar Content -->
                     <div class="sidebar-content">
                         <!-- Side Header -->
-                        <div class="side-header side-content bg-white-op" style="background-image: url('<%= asset_path 'rose-logo-min.png' %>');background-repeat: no-repeat;">
+                        <div class="side-header side-content bg-white-op" style="background-image: url('<%= asset_path 'crown gold.png' %>');background-repeat: no-repeat;">
                             <button class="btn btn-link text-gray pull-right hidden-md hidden-lg" type="button" data-toggle="layout" data-action="sidebar_close">
                                 <i class="fa fa-times"></i>
                             </button>                          
-                            <a class="h5 text-white" href="">
-                                <span class="h4 font-w600 sidebar-mini-hide text-primary" style="margin-left: 40px">ROSE</span>
+                            <a class="h5 text-white" href=""><span class="h4 font-w600 sidebar-mini-hide text-primary" style="margin-left: 40px">NIGHTCLUB</span>
                             </a>
                         </div>
                         <!-- END Side Header -->
@@ -50,49 +49,49 @@
                                         <i class="si si-speedometer"></i><span class="sidebar-mini-hide">Dashboard</span>
                                     <% end %>
                                 </li>
-                                <li class="nav-main-heading"><span class="sidebar-mini-hide">Order Area</span></li>
+                                <li class="nav-main-heading"><span class="sidebar-mini-hide">Event Area</span></li>
                                 <li>
-                                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-users"></i><span class="sidebar-mini-hide">CUSTOMER</span></a>
+                                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-users"></i><span class="sidebar-mini-hide">EVENTS</span></a>
                                     <ul>
                                         <li>
-                                            <%= link_to 'Add Customer', new_customer_path %>
+                                            <%= link_to 'Add Event', new_event_path %>
                                         </li>
                                         <li>
-                                            <%= link_to 'Customers List', customers_path %>
+                                            <%= link_to 'Events List', events_path %>
                                         </li>                                        
                                     </ul>
                                 </li>
                                 <li>
-                                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-basket"></i><span class="sidebar-mini-hide">ORDER</span></a>
+                                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-basket"></i><span class="sidebar-mini-hide">Guestlists</span></a>
                                     <ul>
                                         <li>
-                                            <%= link_to 'Add Order', new_order_path %>
+                                            <%= link_to 'Add Guestlist', new_guestlist_path %>
                                         </li>
                                         <li>
-                                            <%= link_to 'Orders List', orders_path %>
+                                            <%= link_to 'All Guestlists', guestlists_path %>
                                         </li>                                        
                                     </ul>
                                 </li>  
-                                <li class="nav-main-heading"><span class="sidebar-mini-hide">Staff Area</span></li>
+                                <li class="nav-main-heading"><span class="sidebar-mini-hide">Guests Area</span></li>
                                 <li>
-                                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-user-female"></i><span class="sidebar-mini-hide">STAFF</span></a>
+                                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-user-female"></i><span class="sidebar-mini-hide">GUESTS</span></a>
                                     <ul>
                                         <li>
-                                            <%= link_to 'Add Staff', new_staff_path %>
+                                            <%= link_to 'Add Guest', new_guest_path %>
                                         </li>
                                         <li>
-                                            <%= link_to 'Staffs list', staffs_path %>
+                                            <%= link_to 'All Guests', guests_path %>
                                         </li>                                        
                                     </ul>
                                 </li>   
                                 <li>
-                                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-wallet"></i><span class="sidebar-mini-hide">SALARY</span></a>
+                                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-wallet"></i><span class="sidebar-mini-hide">PROMOTERS</span></a>
                                     <ul>
                                         <li>
-                                            <%= link_to 'Add Salary', new_salary_path %>
+                                            <%= link_to 'Add Promoter', new_promoter_path %>
                                         </li>
                                         <li>
-                                            <%= link_to 'Salaries List', salaries_path %>
+                                            <%= link_to 'All Promoters', promoters_path %>
                                         </li>                                        
                                     </ul>
                                 </li> 
@@ -182,10 +181,10 @@
             <!-- Footer -->
             <footer id="page-footer" class="content-mini content-mini-full font-s12 bg-gray-lighter clearfix">
                 <div class="pull-right">
-                    <i class="fa fa-heart text-city"></i> by <a class="font-w600" href="http://facebook.com/inzamul36" target="_blank"> MD INZAMUL HAQUE</a>
+                    <i class="fa fa-heart text-city"></i> by <a class="font-w600" href="http://facebook.com/inzamul36" target="_blank"> Jonas Preisler</a>
                 </div>
                 <div class="pull-left">
-                    <a class="font-w600" href="" target="_blank">ROSE TMS v1.1</a> &copy; <span><%= Time.current.year %></span>
+                    <a class="font-w600" href="" target="_blank">Messenger Chatbots</a> &copy; <span><%= Time.current.year %></span>
                 </div>
             </footer>
             <!-- END Footer -->
@@ -257,7 +256,7 @@
     <head>
         <meta charset="utf-8">
 
-        <title><%= yield(:title) %> | ROSE TMS</title>
+        <title><%= yield(:title) %> | NIGHTCLUB CHATBOT</title>
 
         <meta name="description" content="Tailor Management System">
         <meta name="author" content="MD INZAMUL HAQUE">
@@ -289,15 +288,15 @@
                 <div class="page-brand-info">
                     <div class="brand">
                         <a class="h2" href="">
-                            <%= image_tag 'rose-logo-min.png' %><span class="m-title">ROSE</span>
+                            <%= image_tag 'crown gold.png' %><span class="m-title">NIGHTCLUB</span>
                         </a>
                     </div>
-                    <p class="font-size-20 dtext">Get a Chatbot For Your Business</p>
+                    <p class="font-size-20 dtext">Get More Guests Through The Door With Messenger</p>
                 </div>
                 <div class="page-login-main">
                     <div class="brand visible-xs">
                         <a class="h3 text-white" href="index.html">
-                            <%= image_tag 'rose-logo-min.png' %><span class="m-title">Messenger Chatbots</span>
+                            <%= image_tag 'crown gold.png' %><span class="m-title">Messenger Chatbots</span>
                         </a>
                     </div>
 
@@ -318,7 +317,7 @@
                     <%= yield %>
 
                     <footer class="page-copyright">
-                        <p>BY <a class="font-w600" href="http://facebook.com/inzamul36" target="_blank"> MD INZAMUL HAQUE</a></p>
+                        <p>BY <a class="font-w600" href="http://facebook.com/inzamul36" target="_blank"> JONAS PREISLER</a></p>
                         <p>© <span><%= Time.current.year %></span>. All RIGHT RESERVED.</p>
                     </footer>
                 </div>
