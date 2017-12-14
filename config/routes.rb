@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :promoters
+  resources :ambassadors
   resources :guestlists
   resources :tags
   resources :taggings

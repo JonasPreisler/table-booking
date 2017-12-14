@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171214065934) do
+ActiveRecord::Schema.define(version: 20171214091508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ambassadors", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "guest"
+    t.integer  "guestlist"
+    t.integer  "event"
+  end
 
   create_table "customers", force: :cascade do |t|
     t.string   "customer_name"
@@ -38,11 +47,13 @@ ActiveRecord::Schema.define(version: 20171214065934) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "gender"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "guest"
     t.integer  "event_id"
     t.integer  "guest_id"
+    t.string   "ambassador"
+    t.string   "ambassador_name"
   end
 
   create_table "guests", force: :cascade do |t|
@@ -59,6 +70,9 @@ ActiveRecord::Schema.define(version: 20171214065934) do
     t.integer  "guestlist_id"
     t.string   "guestlist_type"
     t.integer  "guestlist"
+    t.string   "ambassador"
+    t.string   "ambassador_name"
+    t.integer  "ambassador_id"
   end
 
   create_table "measurements", force: :cascade do |t|
@@ -102,12 +116,6 @@ ActiveRecord::Schema.define(version: 20171214065934) do
     t.string   "image"
     t.index ["customer_id"], name: "index_orders_on_customer_id", using: :btree
     t.index ["staff_id"], name: "index_orders_on_staff_id", using: :btree
-  end
-
-  create_table "promoters", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "salaries", force: :cascade do |t|

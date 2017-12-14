@@ -1,10 +1,10 @@
-<%= form_for(promoter) do |f| %>
-  <% if promoter.errors.any? %>
+<%= form_for(ambassador) do |f| %>
+  <% if ambassador.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(promoter.errors.count, "error") %> prohibited this promoter from being saved:</h2>
+      <h2><%= pluralize(ambassador.errors.count, "error") %> prohibited this ambassador from being saved:</h2>
 
       <ul>
-      <% promoter.errors.full_messages.each do |message| %>
+      <% ambassador.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
