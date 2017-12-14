@@ -70,6 +70,6 @@ class AmbassadorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ambassador_params
-      params.require(:ambassador).permit(:name)
+      params.require(:ambassador).permit(:name, :guest_id)
     end
 end

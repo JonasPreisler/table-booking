@@ -10,18 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171214091508) do
+ActiveRecord::Schema.define(version: 20171214125612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "ambassadors", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.integer  "guest"
     t.integer  "guestlist"
     t.integer  "event"
+    t.integer  "guestlist_id"
+    t.integer  "guest_id"
   end
 
   create_table "customers", force: :cascade do |t|
@@ -35,12 +37,15 @@ ActiveRecord::Schema.define(version: 20171214091508) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "guest"
     t.date     "date"
     t.string   "title"
     t.integer  "guestlist"
+    t.string   "ambassador"
+    t.string   "ambassador_name"
+    t.integer  "ambassador_id"
   end
 
   create_table "guestlists", force: :cascade do |t|
@@ -54,6 +59,7 @@ ActiveRecord::Schema.define(version: 20171214091508) do
     t.integer  "guest_id"
     t.string   "ambassador"
     t.string   "ambassador_name"
+    t.integer  "ambassador_id"
   end
 
   create_table "guests", force: :cascade do |t|

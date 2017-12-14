@@ -1,28 +1,52 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Guestlists</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<!-- Page Content -->
+<div class="content">
+    <!-- Dynamic Table Simple -->
+    <div class="block">
+        <div class="block-header">
+            <ul class="block-options">
+                <li>
+                    <button type="button" data-toggle="block-option" data-action="fullscreen_toggle"><i class="si si-size-fullscreen"></i></button>
+                </li>
+                <li>
+                    <button type="button" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                </li>
+            </ul>
+            <h3 class="block-title">Guestlists</h3>
+        </div>
+        <div class="block-content table-responsive">
+            <table class="table table-striped js-dataTable-full-pagination">
+                
 
-  <tbody>
-    <% @guestlists.each do |guestlist| %>
-      <tr>
-        <td><%= link_to 'guestlist', guestlist %></td>
-        <td>-</td>
-        <td><%= link_to 'Edit', edit_guestlist_path(guestlist) %></td>
-         <td>-</td>
-       <td><%= link_to 'Delete', guestlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ambassador:</th>
+                    <th>Event:</th>
+                    <th colspan="3"></th>
+                  </tr>
+                </thead>
 
-<br>
+                <tbody>
+                  <% @guestlists.each do |guestlist| %>
+                    <tr>
+                      <td><%= guestlist.ambassador.name if guestlist.ambassador %> (<%= guestlist.guests.count %>)</td>
+                      <td><%= link_to 'Edit', edit_guestlist_path(guestlist), :class=>'btn btn-xs btn-default' %></td>
+                      <td><%= link_to 'View', guestlist_path(guestlist.id), :class=>'btn btn-xs btn-default' %></td>
+                      <td><%= link_to 'Delete', guestlist, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-xs btn-default' %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
 
-<%= link_to 'New Guestlist', new_guestlist_path %>
+              <br>
+
+              <%= link_to 'New Guestlist', new_guestlist_path %>
+            </table>
+        </div>
+    </div> 
+</div>
+<!-- END Page Content -->
+
