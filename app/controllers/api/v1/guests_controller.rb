@@ -26,7 +26,7 @@ module Api
       private
 
       def order_params
-        params.permit(:guest, :guestlist_id, :first_name, :last_name, :firstname, :lastname, :gender, :event_id, :guestlist)
+        params.permit(:guest, :guestlist_id, :first_name, :last_name, :gender, :event_id, :guestlist)
       end
 
     end
