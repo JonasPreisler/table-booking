@@ -3,7 +3,8 @@
     <div class="block">
         <div class="block-header">
           <div class="block-content table-responsive">
-            <%= form_for(guest) do |f| %>
+            <%= simple_form_for(guest, html: { class: 'form-horizontal' }) do |f| %>
+
               <% if guest.errors.any? %>
                 <div id="error_explanation">
                   <h2><%= pluralize(guest.errors.count, "error") %> prohibited this guest from being saved:</h2>
@@ -17,32 +18,29 @@
               <% end %>
 
               <div class="field">
-                <%= f.label :first_name %>
-                <%= f.text_field :first_name %>
+                <%= f.input :first_name, placeholder: "First Name" %>
               </div>
 
               <div class="field">
-                <%= f.label :last_name %>
-                <%= f.text_field :last_name %>
+                <%= f.input :last_name, placeholder: "Last Name" %>
               </div>
 
               <div class="field">
-                <%= f.label :gender %>
-                <%= f.text_field :gender %>
+                <%= f.input :gender, placeholder: "Gender" %>
               </div>
 
               <div class="col-sm-10">
-                <%= f.label :guestlist %>
+                <label class="control-label">Guestlist:</label>
                 <%= f.select :guestlist_id, Guestlist.all.map{ |m| [m.id]}, {}, placeholder: "Select guestlist", class: "form-control" %>
               </div>
 
               <div class="col-sm-10">
-                <%= f.label :ambassador %>
+                <label class="control-label">Ambassador:</label>
                 <%= f.select :ambassador_id, Ambassador.all.map{ |m| [m.name,m.id]}, {}, placeholder: "Select ambassador", class: "form-control" %>
               </div>
 
               <div class="actions">
-                <%= f.submit %>
+                <%= f.button :submit %>
               </div>
             <% end %>
           </div>

@@ -3,7 +3,7 @@
     <div class="block">
         <div class="block-header">
           <div class="block-content table-responsive">
-            <%= form_for(guestlist) do |f| %>
+            <%= simple_form_for(guestlist, html: { class: 'form-horizontal' }) do |f| %>
               <% if guestlist.errors.any? %>
                 <div id="error_explanation">
                   <h2><%= pluralize(guestlist.errors.count, "error") %> prohibited this guestlist from being saved:</h2>
@@ -17,17 +17,17 @@
               <% end %>
 
               <div class="col-sm-10">
-                <%= f.label :event %>
+                <label class="control-label">Event:</label>
                 <%= f.select :event_id,  Event.all.map{ |m| [m.title,m.id]}, {}, placeholder: "Select event", class: "form-control" %>
               </div>
 
               <div class="col-sm-10">
-                <%= f.label :ambassador %>
+                <label class="control-label">Ambassador:</label>
                 <%= f.select :ambassador_id, Ambassador.all.map{ |m| [m.name,m.id]}, {}, placeholder: "Select ambassador", class: "form-control" %>
               </div>
 
               <div class="actions">
-                <%= f.submit %>
+                <%= f.button :submit %>
               </div>
             <% end %>
           </div>

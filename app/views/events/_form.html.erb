@@ -3,7 +3,7 @@
     <div class="block">
         <div class="block-header">
           <div class="block-content table-responsive">
-            <%= form_for(event) do |f| %>
+            <%= simple_form_for(event, html: { class: 'form-horizontal' }) do |f| %>
               <% if event.errors.any? %>
                 <div id="error_explanation">
                   <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
@@ -17,16 +17,15 @@
               <% end %>
 
               <div class="field">
-                <%= f.label :Title %>
-                <%= f.text_field :title %>
+                <%= f.input :title, placeholder: 'Title' %>
               </div>
               <div class="field">
-                <%= f.label :Date %>
+                <label class="control-label">Date:</label>
                 <%= f.date_field :date %>
               </div>
 
               <div class="actions">
-                <%= f.submit %>
+                <%= f.button :submit %>
               </div>
             <% end %>
           </div>
