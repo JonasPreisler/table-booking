@@ -5128,7 +5128,7 @@ a.list-group-item:focus {
   box-shadow: none;
 }
 .header-navbar-transparent.header-navbar-fixed.header-navbar-scroll #header-navbar {
-  background-color: #3e4a59;
+  background-color: #f5f5f5;
 }
 .header-navbar-transparent.header-navbar-fixed #main-container {
   padding-top: 0;
