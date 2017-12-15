@@ -25,16 +25,6 @@
     <!-- Dynamic Table Simple -->
     <div class="block">
         <div class="block-header">
-            <ul class="block-options">
-                <li>
-                    <button type="button" data-toggle="block-option" data-action="fullscreen_toggle"><i class="si si-size-fullscreen"></i></button>
-                </li>
-                <li>
-                    <button type="button" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
-                </li>
-            </ul>
-            <h3 class="block-title">Events</h3>
-        </div>
         <div class="block-content table-responsive">
             <table class="table table-striped js-dataTable-full-pagination">
                 
@@ -61,7 +51,7 @@
 
               <br>
 
-              <%= link_to 'New Event', new_event_path %>
+              <%= link_to 'New Event', new_event_path, class: "btn btn-xl btn-default" %>
             </table>
         </div>
     </div> 

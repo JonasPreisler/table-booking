@@ -1,21 +1,25 @@
 <p id="notice"><%= notice %></p>
-
+<div class="content bg-gray-lighter">
+    <div class="row items-push">
+        <div class="col-sm-7">
+            <h1 class="page-heading animated zoomIn">
+                All Guestlists
+            </h1>
+        </div>
+        <div class="col-sm-5 text-right hidden-xs">
+            <ol class="breadcrumb push-10-t">
+                <li>Dashboard</li>
+                <li><a class="link-effect" href="">Guestlists</a></li>
+            </ol>
+        </div>
+    </div>
+</div>
 
 <!-- Page Content -->
 <div class="content">
     <!-- Dynamic Table Simple -->
     <div class="block">
         <div class="block-header">
-            <ul class="block-options">
-                <li>
-                    <button type="button" data-toggle="block-option" data-action="fullscreen_toggle"><i class="si si-size-fullscreen"></i></button>
-                </li>
-                <li>
-                    <button type="button" data-toggle="block-option" data-action="content_toggle"><i class="si si-arrow-up"></i></button>
-                </li>
-            </ul>
-            <h3 class="block-title">Guestlists</h3>
-        </div>
         <div class="block-content table-responsive">
             <table class="table table-striped js-dataTable-full-pagination">
                 
@@ -44,7 +48,7 @@
 
               <br>
 
-              <%= link_to 'New Guestlist', new_guestlist_path %>
+              <%= link_to 'New Guestlist', new_guestlist_path, class: "btn btn-xl btn-default" %>
             </table>
         </div>
     </div> 

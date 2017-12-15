@@ -6,7 +6,6 @@ class GuestsController < ApplicationController
   # GET /guests.json
   def index
     @guests = Guest.all
-    @guestlist = Guestlist.all.count
   end
 
   # GET /guests/1

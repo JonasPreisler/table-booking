@@ -1,22 +1,31 @@
-<%= form_for(ambassador) do |f| %>
-  <% if ambassador.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(ambassador.errors.count, "error") %> prohibited this ambassador from being saved:</h2>
+<div class="content">
+    <!-- Dynamic Table Simple -->
+    <div class="block">
+        <div class="block-header">
+          <div class="block-content table-responsive">
+            <%= form_for(ambassador) do |f| %>
+              <% if ambassador.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(ambassador.errors.count, "error") %> prohibited this ambassador from being saved:</h2>
 
-      <ul>
-      <% ambassador.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+                  <ul>
+                  <% ambassador.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+              <div class="field">
+                <%= f.label :name %>
+                <%= f.text_field :name %>
+              </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+              <div class="actions">
+                <%= f.submit %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+    </div> 
+</div>

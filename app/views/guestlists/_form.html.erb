@@ -1,27 +1,36 @@
-<%= form_for(guestlist) do |f| %>
-  <% if guestlist.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(guestlist.errors.count, "error") %> prohibited this guestlist from being saved:</h2>
+<div class="content">
+    <!-- Dynamic Table Simple -->
+    <div class="block">
+        <div class="block-header">
+          <div class="block-content table-responsive">
+            <%= form_for(guestlist) do |f| %>
+              <% if guestlist.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(guestlist.errors.count, "error") %> prohibited this guestlist from being saved:</h2>
 
-      <ul>
-      <% guestlist.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+                  <ul>
+                  <% guestlist.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
 
-  <div class="col-sm-10">
-    <%= f.label :event %>
-    <%= f.select :event_id,  Event.all.map{ |m| [m.title,m.id]}, {}, placeholder: "Select event", class: "form-control" %>
-  </div>
+              <div class="col-sm-10">
+                <%= f.label :event %>
+                <%= f.select :event_id,  Event.all.map{ |m| [m.title,m.id]}, {}, placeholder: "Select event", class: "form-control" %>
+              </div>
 
-  <div class="col-sm-10">
-    <%= f.label :ambassador %>
-    <%= f.select :ambassador_id, Ambassador.all.map{ |m| [m.name,m.id]}, {}, placeholder: "Select ambassador", class: "form-control" %>
-  </div>
+              <div class="col-sm-10">
+                <%= f.label :ambassador %>
+                <%= f.select :ambassador_id, Ambassador.all.map{ |m| [m.name,m.id]}, {}, placeholder: "Select ambassador", class: "form-control" %>
+              </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+              <div class="actions">
+                <%= f.submit %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+    </div> 
+</div>
