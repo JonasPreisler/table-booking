@@ -4,7 +4,7 @@ class GuestlistsController < ApplicationController
   # GET /guestlists
   # GET /guestlists.json
   def index
-    @guestlists = Guestlist.all
+    @guestlists = Guestlist.all.order('created_at DESC')
   end
 
   # GET /guestlists/1

@@ -47,52 +47,29 @@
                             <ul class="nav-main">
                                 <li>
                                     <%= link_to dashboards_path do %>
-                                        <i class="si si-speedometer"></i><span class="sidebar-mini-hide">DASHBOARD</span>
+                                        <i class="si si-speedometer"></i>DASHBOARD
                                     <% end %>
                                 </li>
                                 <li>
-                                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-users"></i><span class="sidebar-mini-hide">EVENTS</span></a>
-                                    <ul>
-                                        <li>
-                                            <%= link_to 'Add Event', new_event_path %>
-                                        </li>
-                                        <li>
-                                            <%= link_to 'Events List', events_path %>
-                                        </li>                                        
-                                    </ul>
+                                    <%= link_to events_path do %>
+                                        <i class="si si-users"></i>EVENTS
+                                    <% end %>
                                 </li>
                                 <li>
-                                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-basket"></i><span class="sidebar-mini-hide">GUESTLISTS</span></a>
-                                    <ul>
-                                        <li>
-                                            <%= link_to 'Add Guestlist', new_guestlist_path %>
-                                        </li>
-                                        <li>
-                                            <%= link_to 'All Guestlists', guestlists_path %>
-                                        </li>                                        
-                                    </ul>
+                                    <%= link_to guestlists_path do %>
+                                        <i class="si si-basket"></i>
+                                        GUESTLISTS
+                                    <% end %>
                                 </li>  
                                 <li>
-                                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-user-female"></i><span class="sidebar-mini-hide">GUESTS</span></a>
-                                    <ul>
-                                        <li>
-                                            <%= link_to 'Add Guest', new_guest_path %>
-                                        </li>
-                                        <li>
-                                            <%= link_to 'All Guests', guests_path %>
-                                        </li>                                        
-                                    </ul>
+                                    <%= link_to guests_path do %>
+                                        <i class="si si-user-female"></i>GUESTS
+                                    <% end %>
                                 </li>   
                                 <li>
-                                    <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-wallet"></i><span class="sidebar-mini-hide">AMBASSADORS</span></a>
-                                    <ul>
-                                        <li>
-                                            <%= link_to 'Add Ambassador', new_ambassador_path %>
-                                        </li>
-                                        <li>
-                                            <%= link_to 'All Ambassadors', ambassadors_path %>
-                                        </li>                                        
-                                    </ul>
+                                    <%= link_to ambassadors_path do %>
+                                        <i class="si si-wallet"></i>AMBASSADORS
+                                    <% end %>
                                 </li> 
                                 <li class="nav-main-heading"><span class="sidebar-mini-hide">Settings Area</span></li>   
                                 <li>

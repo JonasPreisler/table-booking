@@ -17,9 +17,9 @@
             </ol>
         </div>
     </div>
+<%= link_to 'New Event', new_event_path, class: "btn btn-xl btn-default button-new" %>
 </div>
 <!-- END Page Header -->
-
 <!-- Page Content -->
 <div class="content">
     <!-- Dynamic Table Simple -->
@@ -27,8 +27,6 @@
         <div class="block-header">
         <div class="block-content table-responsive">
             <table class="table table-striped js-dataTable-full-pagination">
-                
-
               <table>
                 <thead>
                   <tr>
@@ -48,10 +46,6 @@
                   <% end %>
                 </tbody>
               </table>
-
-              <br>
-
-              <%= link_to 'New Event', new_event_path, class: "btn btn-xl btn-default" %>
             </table>
         </div>
     </div> 

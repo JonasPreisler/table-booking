@@ -14,6 +14,7 @@
             </ol>
         </div>
     </div>
+<%= link_to 'New Guest', new_guest_path, class: "btn btn-xl btn-default button-new" %>
 </div>
 <!-- END Page Header -->
 
@@ -32,7 +33,7 @@
                     <th>First name</td>
                     <th>Last name</th>
                     <th>Gender</th>
-                    <th>Guestlists</th>
+                    <th>Event</th>
                     <th colspan="3"></th>
                   </tr>
                 </thead>
@@ -43,17 +44,13 @@
                       <td><%= guest.first_name %></td>
                       <td><%= guest.last_name %></td>
                       <td><%= guest.gender %></td>
-                      <td><%= link_to guest.guestlist.id, guestlists_path(guest.guestlist.id) %></td>
+                      <td><%= link_to guest.guestlist.event.title, guestlists_path(guest.guestlist.id) %></td>
                     </tr>
                   <% end %>
                 </tbody>
               </table>
-
-              <br>
-
             </table>
         </div>
     </div> 
 </div>
-<!-- END Page Content -->
 
