@@ -36,8 +36,7 @@
                 <tbody>
                   <% @guestlists.each do |guestlist| %>
                     <tr>
-                      <td><%= link_to guestlist.ambassador.name, guestlist_path(guestlist.id) if guestlist.ambassador %> (<%= guestlist.guests.count %>)</td>  
-                      <td><%= guestlist.event.title %></td>
+                      <td><%= link_to guestlist.event.title, guestlist_path(guestlist.id) if guestlist.event %> (<%= guestlist.guests.count %>)</td>
                       <td><%= guestlist.event.date %></td>
                       <td><%= link_to 'Edit', edit_guestlist_path(guestlist), :class=>'btn btn-xs btn-default' %></td>
                       <td><%= link_to 'Delete', guestlist, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-xs btn-default' %></td>
