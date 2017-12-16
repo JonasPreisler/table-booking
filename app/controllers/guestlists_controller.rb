@@ -10,7 +10,7 @@ class GuestlistsController < ApplicationController
   # GET /guestlists/1
   # GET /guestlists/1.json
   def show
-    @guests = @guestlist.guests
+    @guests = @guestlist.guests.order('created_at DESC')
     @ambassadors = @guestlist.ambassador
   end
 
