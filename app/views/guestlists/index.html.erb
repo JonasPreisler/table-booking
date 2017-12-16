@@ -3,13 +3,13 @@
     <div class="row items-push">
         <div class="col-sm-7">
             <h1 class="page-heading animated zoomIn">
-                All Guestlists
+                All EVENTS
             </h1>
         </div>
         <div class="col-sm-5 text-right hidden-xs">
             <ol class="breadcrumb push-10-t">
                 <li>Dashboard</li>
-                <li><a class="link-effect" href="">Guestlists</a></li>
+                <li><a class="link-effect" href="">Events</a></li>
             </ol>
         </div>
     </div>
@@ -28,17 +28,16 @@
               <table>
                 <thead>
                   <tr>
-                    <th>Ambassador:</th>
-                    <th>Event:</th>
                     <th>Date:</th>
+                    <th>Event:</th>
                     <th colspan="3"></th>
                 </thead>
 
                 <tbody>
                   <% @guestlists.each do |guestlist| %>
                     <tr>
-                      <td><%= link_to guestlist.event.title, guestlist_path(guestlist.id) if guestlist.event %> (<%= guestlist.guests.count %>)</td>
                       <td><%= guestlist.event.date %></td>
+                      <td><%= link_to guestlist.event.title, guestlist_path(guestlist.id) if guestlist.event %> (<%= guestlist.guests.count %>)</td>
                       <td><%= link_to 'Edit', edit_guestlist_path(guestlist), :class=>'btn btn-xs btn-default' %></td>
                       <td><%= link_to 'Delete', guestlist, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-xs btn-default' %></td>
                     </tr>

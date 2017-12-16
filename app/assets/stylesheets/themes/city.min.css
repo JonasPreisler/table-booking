@@ -7,16 +7,9 @@ table { border-collapse: collapse; }
 tr { 
   border: none;
 }
-tr:hover {
-  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.5);
-  cursor: pointer;
-  border-radius: 5px;
-}
 td {
-  border-top: solid 1px #e5e5e5; 
-  border-bottom: solid 1px #e5e5e5;
   width: 150px;
-  height: 33px;
+  height: 36px;
   padding-left: 10px;
 }
 
@@ -37,3 +30,5 @@ td {
   padding-left: 35px;
   padding-right: 35px;
 }
+
+tr:nth-child(even) {background: #f9f9f9}

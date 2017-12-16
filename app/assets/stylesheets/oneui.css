@@ -6493,9 +6493,10 @@ a.block.block-link-hover3:active {
 }
 .nav-main a {
   display: block;
-  padding: 10px 20px;
+  padding: 20px 20px;
   color: #333;
   font-weight: 500;
+  font-size: 15px;
 }
 .nav-main a:hover,
 .nav-main a:focus {
