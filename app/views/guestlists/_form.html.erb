@@ -21,13 +21,8 @@
                 <%= f.select :event_id,  Event.all.map{ |m| [m.title,m.id]}, {}, placeholder: "Select event", class: "form-control" %>
               </div>
 
-              <div class="col-sm-10">
-                <label class="control-label">Ambassador:</label>
-                <%= f.select :ambassador_id, Ambassador.all.map{ |m| [m.name,m.id]}, {}, placeholder: "Select ambassador", class: "form-control" %>
-              </div>
-
               <div class="actions">
-                <%= f.button :submit %>
+                <%= f.button :submit, class: "button-new" %>
               </div>
             <% end %>
           </div>

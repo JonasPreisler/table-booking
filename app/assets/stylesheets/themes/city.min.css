@@ -30,5 +30,14 @@ td {
   padding-left: 35px;
   padding-right: 35px;
 }
+.button-new-2 {
+  background-color: #58c5b3;
+  color: #fff;
+  border-radius: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
 
 tr:nth-child(even) {background: #f9f9f9}
