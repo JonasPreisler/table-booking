@@ -782,9 +782,7 @@ fieldset[disabled] .btn-default.active {
   background-color: #545454;
 }
 .btn-primary {
-  color: #fff;
-  background-color: #5c90d2;
-  border-color: #3675c5;
+  color: #545454;
   border-radius: 5px;
 }
 .btn-primary:focus,
@@ -5345,11 +5343,11 @@ a.list-group-item:focus {
 }
 .side-header img {
   display: inline-block;
-  margin-top: -2px;
+  margin-top: 10px;
 }
 .side-content {
   margin: 0 auto;
-  padding: 13px 20px 1px;
+  padding: 0px 20px 1px;
   max-width: 100%;
   overflow-x: hidden;
 }
