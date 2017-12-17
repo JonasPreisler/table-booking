@@ -10,7 +10,7 @@ class AmbassadorsController < ApplicationController
   # GET /promoters/1
   # GET /promoters/1.json
   def show
-    @ambassador = Ambassador.find(params[:id])
+    @ambassador = Ambassador.friendly.find(params[:id])
   end
 
   # GET /promoters/new
@@ -65,11 +65,11 @@ class AmbassadorsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ambassador
-      @ambassador = Ambassador.find(params[:id])
+      @ambassador = Ambassador.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ambassador_params
-      params.require(:ambassador).permit(:name, :guest_id)
+      params.require(:ambassador).permit(:name, :guest_id, :slug)
     end
 end
