@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <% content_for :title, "Dashboard" %>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
@@ -36,3 +37,4 @@
         </div>
     </div>
 </div>
+<% end %>
