@@ -70,6 +70,6 @@ class GirlsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def girl_params
-      params.require(:girl).permit(:name, :girl_name)
+      params.require(:girl).permit(:name, :girl_name, :guest_id, :slug)
     end
 end
