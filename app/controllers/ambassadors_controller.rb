@@ -1,6 +1,6 @@
 class AmbassadorsController < ApplicationController
   before_action :set_ambassador, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /promoters
   # GET /promoters.json
   def index

@@ -1,6 +1,6 @@
 class GuestlistsController < ApplicationController
   before_action :set_guestlist, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /guestlists
   # GET /guestlists.json
   def index
