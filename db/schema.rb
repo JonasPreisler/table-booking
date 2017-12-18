@@ -10,23 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171217143348) do
+ActiveRecord::Schema.define(version: 20171218045027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "ambassadors", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "guest"
-    t.integer  "guestlist"
-    t.integer  "event"
-    t.integer  "guestlist_id"
-    t.integer  "guest_id"
-    t.string   "slug"
-    t.index ["slug"], name: "index_ambassadors_on_slug", unique: true, using: :btree
-  end
 
   create_table "customers", force: :cascade do |t|
     t.string   "customer_name"
