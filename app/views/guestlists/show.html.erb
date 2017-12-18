@@ -31,6 +31,7 @@
                     <th>Last name</th>
                     <th>Gender</th>
                     <th>Ambassador</th>
+                    <th>Girl</th>
                     <th colspan="3"></th>
                   </tr>
                 </thead>
@@ -42,6 +43,7 @@
                       <td><%= guests.last_name %></td>
                       <td><%= guests.gender %></td>
                       <td><%= guests.ambassador.name if guests.ambassador %></td>
+                      <td><%= guests.girl_name if guests.girl_name %></td>
                     </tr>
                   <% end %>
                 </tbody>
