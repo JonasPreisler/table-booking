@@ -1,5 +1,4 @@
 class Guest < ApplicationRecord
-    validates :ambassador_name, presence: true
     belongs_to :guestlist
     belongs_to :ambassador
 
