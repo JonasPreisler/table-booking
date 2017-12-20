@@ -1,6 +1,7 @@
 class Guest < ApplicationRecord
     belongs_to :guestlist
-    belongs_to :ambassador, validates :name, presence: true
+    belongs_to :ambassador
+    validates :ambassador_name, presence: true
 
     def guestlist_objects
       Guestlist.where(id: self.guestlist_id.reject(&:empty?)).map(&:id).join(",")
