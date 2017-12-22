@@ -64,6 +64,14 @@ class GuestsController < ApplicationController
   end
 
   private
+
+    def valid_guest_creation
+      if
+        Ambassador.where("lower(name) = ?", self.try(:ambassador_name).try(:downcase)).any?
+      else
+        errors.add(:base, 'Sorry Wrong Ambassador')
+      end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_guest
       @guest = Guest.find(params[:id])

@@ -1,7 +1,8 @@
 class Guest < ApplicationRecord
+    validate :valid_guest_creation
     belongs_to :guestlist
     belongs_to :ambassador
-
+    
     def guestlist_objects
       Guestlist.where(id: self.guestlist_id.reject(&:empty?)).map(&:id).join(",")
     end

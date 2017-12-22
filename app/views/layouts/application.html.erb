@@ -303,11 +303,8 @@
               <!-- Page JS Code -->
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-        <script type="text/javascript">
-            $(document).ready(function() {
-              $(".select_list").select2();
-            });
-        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+        @yield ('js')
 
     </body>
 </html>
