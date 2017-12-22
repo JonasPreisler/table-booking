@@ -10,4 +10,15 @@ class Guest < ApplicationRecord
     def ambassador_objects
       Ambassador.where(id: self.ambassador_id.reject(&:empty?)).map(&:id).join(",")
     end
+
+  private
+
+    def valid_guest_creation
+      if
+        Ambassador.where("name = ?", self.ambassador_name).any?
+      else
+        errors.add(:base, 'Sorry Wrong Ambassador')
+      end
+    end
+
 end
