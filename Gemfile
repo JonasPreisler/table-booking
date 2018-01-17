@@ -38,6 +38,7 @@ gem 'mini_magick', '~> 4.8'
 gem 'fog', '~> 1.42'
 gem 'simple_form', '~> 3.5'
 gem 'friendly_id', '~> 5.2', '>= 5.2.3'
+gem 'http'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

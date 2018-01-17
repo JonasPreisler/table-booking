@@ -10,20 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171218045815) do
+ActiveRecord::Schema.define(version: 20180101164756) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "citext"
 
-  create_table "ambassadors", primary_key: "name", id: :string, force: :cascade do |t|
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+  create_table "ambassadors", primary_key: "name", id: :citext, force: :cascade do |t|
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.integer  "guest"
     t.integer  "guestlist"
     t.integer  "event"
     t.integer  "guestlist_id"
     t.integer  "guest_id"
     t.string   "slug"
+    t.integer  "availability", default: 0
+    t.index ["name"], name: "index_ambassadors_on_name", unique: true, using: :btree
     t.index ["slug"], name: "index_ambassadors_on_slug", unique: true, using: :btree
   end
 
@@ -91,7 +94,7 @@ ActiveRecord::Schema.define(version: 20171218045815) do
     t.string   "guestlist_type"
     t.integer  "guestlist"
     t.string   "ambassador"
-    t.string   "ambassador_name"
+    t.citext   "ambassador_name"
     t.integer  "ambassador_id"
     t.integer  "event_id"
     t.string   "event_title"
@@ -118,6 +121,13 @@ ActiveRecord::Schema.define(version: 20171218045815) do
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
     t.index ["order_id"], name: "index_measurements_on_order_id", using: :btree
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "received"
+    t.string   "reply"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "orders", force: :cascade do |t|

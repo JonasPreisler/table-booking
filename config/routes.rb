@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :girls
+  resources :messages
+  get 'callback/index'
+  post '/' => 'callback#received_data'
+  get 'callback/received_data'
+  root 'callback#index'
+
   resources :ambassadors
   resources :guestlists
   resources :tags
@@ -15,7 +20,7 @@ Rails.application.routes.draw do
     end
   end
   
-  root :to => 'dashboards#index'
+  #root :to => 'dashboards#index'
   
   resources :guests
   resources :test

@@ -15,10 +15,9 @@ class Guest < ApplicationRecord
 
     def valid_guest_creation
       if
-        Ambassador.where("name = ?", self.ambassador_name).any?
+        Ambassador.where("lower(name) = ?",self.ambassador_name.downcase).any?
       else
         errors.add(:base, 'Sorry Wrong Ambassador')
       end
     end
-
 end
