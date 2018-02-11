@@ -14,3 +14,18 @@
 //= require jquery_ujs
 // require turbolinks
 //= require_tree .
+
+
+
+
+$.ajax({
+  // ...
+    dataType: "json"
+  , success: function(data){
+      // do something with successful data
+  }
+  , error: function(xhr){
+      var errors = $.parseJSON(xhr.responseText).errors
+      // do something with errors
+  }
+})
