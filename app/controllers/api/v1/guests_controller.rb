@@ -36,7 +36,6 @@ module Api
         params.permit(:guest, :guestlist_id, :first_name, :last_name, :gender, :event_id, :guestlist, :ambassador_id, :ambassador_name, :event_id, :ambassador, :error, :errors, :base)
       end
 
-end
 
     end
   end
