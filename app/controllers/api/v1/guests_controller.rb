@@ -17,7 +17,7 @@ module Api
         if guest.save
           render json: {status: 'SUCCESS', message:'Saved guest', data:guest},status: :ok
         else
-          render :json => { :errors => @guests.errors.as_json }, :status => 420
+          render :json => { :errors => @guest.errors.as_json }, :status => 420
         end
       end
 
