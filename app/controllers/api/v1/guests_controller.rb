@@ -14,18 +14,17 @@ module Api
 
       def create
         guest = Guest.new(guest_params)
-
         if guest.save
           render json: {status: 'SUCCESS', message:'Saved guest', data:guest},status: :ok
         else
-          render :json => { :errors => @model.errors.full_messages }, :status => 422
+          render :json => { :errors => @guests.errors.as_json }, :status => 420
         end
       end
 
       private
 
       def guest_params
-        params.permit(:guest, :guestlist_id, :first_name, :last_name, :gender, :event_id, :guestlist, :ambassador_id, :ambassador_name, :event_id, :ambassador, :errors, :base)
+        params.permit(:guest, :guestlist_id, :first_name, :last_name, :gender, :event_id, :guestlist, :ambassador_id, :ambassador_name, :event_id, :ambassador)
       end
 
     end
