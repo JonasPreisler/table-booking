@@ -18,14 +18,14 @@ module Api
           render json: {status: 'SUCCESS', message:'Saved guest', data:guest},status: :ok
         else
           render json: {status: 'ERROR', message:'Guest not saved',
-          data:guest.errors.as_json},status: :unprocessable_entity
+          data:guest.errors.as_json},status: :422
         end
       end
 
       private
 
       def guest_params
-        params.permit(:guest, :guestlist_id, :first_name, :last_name, :gender, :event_id, :guestlist, :ambassador_id, :ambassador_name, :event_id, :ambassador)
+        params.permit(:guest, :guestlist_id, :first_name, :last_name, :gender, :event_id, :guestlist, :ambassador_id, :ambassador_name, :event_id, :ambassador, :errors)
       end
 
     end
