@@ -1,5 +1,5 @@
 class Guest < ApplicationRecord
-    validate :valid_guest_creation
+    validate :valid_guest_creation, :ambassador_id, :ambassador_name
     belongs_to :guestlist
     belongs_to :ambassador
     
