@@ -18,7 +18,7 @@ module Api
           render json: {status: 'SUCCESS', message:'Saved guest', data:guest},status: :ok
         else
           render json: {status: 'ERROR', message:'Guest not saved',
-          data:guest.errors.as_json},status: :422
+          data:guest.errors.as_json},status: :unprocessable_entity
         end
       end
 
