@@ -24,10 +24,6 @@ module Api
 
       private
 
-      def record_not_found(error)
-        render :json => {:error => error.message}, :status => :not_found
-      end 
-
       def guest_params
         params.permit(:guest, :guestlist_id, :first_name, :last_name, :gender, :event_id, :guestlist, :ambassador_id, :ambassador_name, :event_id, :ambassador, :error, :status)
       end
