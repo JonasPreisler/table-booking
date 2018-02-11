@@ -20,14 +20,14 @@ module Api
           render json: {status: 'SUCCESS', message:'Saved guestlist', data:guestlist},status: :ok
         else
           render json: {status: 'ERROR', message:'Guest not saved',
-          data:guestlist.errors},status: :unprocessable_entity
+          data:guestlist.errors.full_messages},status: :unprocessable_entity
         end
       end
 
       private
 
       def guestlist_params
-        params.permit(:guestlist_id, :guestlist, :first_name, :last_name, :gender, :event_id, :title, :guest_id, :guest, :ambassador, :ambassador_name, :ambassador_id)
+        params.permit(:guestlist_id, :guestlist, :first_name, :last_name, :gender, :event_id, :title, :guest_id, :guest, :ambassador, :ambassador_name, :ambassador_id, :full_messages, :errors, :error, :status)
       end
 
     end
