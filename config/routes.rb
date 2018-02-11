@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'callback/index'
   post '/' => 'callback#received_data'
   get 'callback/received_data'
-  root 'callback#index'
+  root 'dashboards#index'
 
   resources :ambassadors
   resources :guestlists
