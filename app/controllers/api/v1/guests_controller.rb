@@ -24,8 +24,16 @@ module Api
 
       private
 
+      def valid_guest_creation
+        if
+          Ambassador.where("lower(name) = ?",self.ambassador_name.downcase).any?
+        else
+          errors.add(:base, 'Sorry Wrong Ambassador')
+        end
+      end
+
       def guest_params
-        params.permit(:guest, :guestlist_id, :first_name, :last_name, :gender, :event_id, :guestlist, :ambassador_id, :ambassador_name, :event_id, :ambassador)
+        params.permit(:guest, :guestlist_id, :first_name, :last_name, :gender, :event_id, :guestlist, :ambassador_id, :ambassador_name, :event_id, :ambassador, :error, :errors, :base)
       end
 
 end
