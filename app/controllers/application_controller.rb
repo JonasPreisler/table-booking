@@ -7,10 +7,4 @@ class ApplicationController < ActionController::Base
       redirect_to :back, status: 401 unless current_user
       #redirects to previous page
   end
-
-
-private
-  def record_not_found(error)
-      render :json => {:error => error.message}, :status => :not_found
-  end
 end
