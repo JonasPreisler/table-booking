@@ -10,14 +10,5 @@ class Guestlist < ApplicationRecord
       Ambassador.where(id: self.ambassador.reject(&:empty?)).map(&:name).join(",")
     end
 
-    private
-
-    def valid_guest_creation
-      if
-        Ambassador.where("lower(name) = ?",self.ambassador_name.downcase).any?
-      else
-        errors.add(:base, 'Sorry Wrong Ambassador')
-      end
-    end
 
 end
