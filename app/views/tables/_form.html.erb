@@ -1,20 +1,6 @@
 <%= simple_form_for(@table) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-
-
-    <div class="col-sm-10">
-      <label class="control-label">Table:</label>
-      <%= f.select :table_id, Table.all.map{ |m| [m.table_number.m.id]}, {}, placeholder: "Select Table", class: "form-control" %>
-    </div>
-
-
-    <%= f.input :guest %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-  </div>
-
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
