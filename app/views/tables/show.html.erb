@@ -1,10 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+
+Great! You have created:
+<p style="font-size:26px">
   <strong>Table id:</strong>
   <%= @table.id %>
 </p>
 
+<%= link_to 'New Table', new_table_path, class: "btn btn-xl btn-default button-new" %>
 
-<%= link_to 'Edit', edit_table_path(@table) %> |
-<%= link_to 'Back', tables_path %>
+<%= link_to 'View All Tables', tables_path, class: "btn btn-xl btn-default button-new-2" %>
+<br>
+<br>
+<div class="content">
+    <!-- Dynamic Table Simple -->
+    <div class="block">
+        <div class="block-header">
+        <div class="block-content table-responsive">
+            <table class="table table-striped js-dataTable-full-pagination">
+              Remember: to make it easier for yourself, you only need to create as many tables as you have in your venue.
+              <br>
+              You can always create more tables, but not delete tables.
+              We haven't included a delete option, just to make sure that you don't accidentally delete a table, and therefore lose previous data from that table.
+              <br>
+              If you need to delete a table, contact support@tekuila.com.
+              </table>
+            </table>
+        </div>
+    </div> 
+</div>

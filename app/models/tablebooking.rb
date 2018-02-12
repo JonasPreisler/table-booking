@@ -1,6 +1,6 @@
 class Tablebooking < ApplicationRecord
-  has_one :guests
-  has_one :guestlists
+  has_one :guest
+  has_one :guestlist
   belongs_to :event
 
   def table_objects

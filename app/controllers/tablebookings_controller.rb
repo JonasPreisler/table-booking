@@ -11,7 +11,6 @@ class TablebookingsController < ApplicationController
   # GET /tablebookings/1.json
   def show
     @tables = @tablebooking.table_id
-    @events = @tablebooking.event.title
   end
 
   # GET /tablebookings/new
@@ -71,6 +70,6 @@ class TablebookingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tablebooking_params
-      params.require(:tablebooking).permit(:tablebooking, :table_id, :guest, :first_name, :last_name, :guestlist_id, :event_title, :table_id, :guestlist, :event_id)
+      params.require(:tablebooking).permit(:table_id, :guest, :first_name, :last_name, :guestlist_id, :event_title, :table_id, :guestlist, :event_id, :event)
     end
 end

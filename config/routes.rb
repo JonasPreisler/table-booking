@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'callback/index'
   post '/' => 'callback#received_data'
   get 'callback/received_data'
-  root 'dashboards#index'
+  root 'dashboard#index'
 
   resources :tablebookings
   resources :tables
@@ -23,11 +23,11 @@ Rails.application.routes.draw do
     end
   end
   
-  #root :to => 'dashboards#index'
+  #root :to => 'dashboard#index'
   
   resources :guests
   resources :test
-  resources :dashboards
+  resources :dashboard
   resources :customers
   resources :orders
   resources :staffs

@@ -1,7 +1,6 @@
+<p style="font-size:26px"><strong>Confirm:</strong></p>
+
 <%= simple_form_for(@table) do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.button :submit, class: "btn btn-xl btn-default button-new-2" %>
 <% end %>

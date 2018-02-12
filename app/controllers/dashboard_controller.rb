@@ -1,4 +1,4 @@
-class DashboardsController < ApplicationController
+class DashboardController < ApplicationController
   def index
   	month = Date.today
   	@orders = Order.where(:order_delete=>'0')
