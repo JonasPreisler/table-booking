@@ -10,7 +10,6 @@ class TablebookingsController < ApplicationController
   # GET /tablebookings/1
   # GET /tablebookings/1.json
   def show
-    @guests = @tablebooking.guests.order('created_at DESC')
     @tables = @tablebooking.table_id
     @events = @tablebooking.event.title
   end

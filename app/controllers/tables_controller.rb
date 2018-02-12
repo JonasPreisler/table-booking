@@ -69,6 +69,6 @@ class TablesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def table_params
-      params.permit(:table)
+      params.require(:table).permit(:guest, :first_name, :last_name, :gender, :title, :date, :guestlist_id, :guest_id, :tablebooking, :ambassador, :ambassador_id, :ambassador_name)
     end
 end

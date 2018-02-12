@@ -1,54 +1,20 @@
 <p id="notice"><%= notice %></p>
-<div class="content">
-    <div class="row items-push">
-        <div class="col-sm-7">
-            <h1 class="page-heading animated zoomIn">
-                <td>Event title</td>
-            </h1>
-        </div>
-        <div class="col-sm-5 text-right hidden-xs">
-            <ol class="breadcrumb push-10-t">
-                <li>Dashboard</li>
-                <li><a class="link-effect" href="">Guest</a></li>
-            </ol>
-        </div>
-    </div>
-</div>
 
-<div class="content">
-    <!-- Dynamic Table Simple -->
-    <div class="block">
-        <div class="block-header">
-        <div class="block-content table-responsive">
-            <table class="table table-striped js-dataTable-full-pagination">
-                
+<p>
+  <strong>First name:</strong>
+  <%= @tablebooking.first_name %>
+</p>
 
-              <table>
-                <thead>
-                  <tr>
-                    <th>First name</th>
-                    <th>Last name</th>
-                    <th>Event</th>
-                    <th>Table</th>
-                    <th colspan="3"></th>
-                  </tr>
-                </thead>
+<p>
+  <strong>Last name:</strong>
+  <%= @tablebooking.last_name %>
+</p>
 
-                <tbody>
-                  <% @guests.each do |guests| %>
-                    <tr>
-                      <td><%= guests.first_name %></td>
-                      <td><%= guests.last_name %></td>
-                      <td><%= guests.event.title %></td>
-                      <td><%= guests.table_id if guests.table_id %></td>
-                    </tr>
-                  <% end %>
-                </tbody>
-              </table>
-
-              <br>
-
-            </table>
-        </div>
-    </div> 
-</div>
+<p>
+  <strong>Table ID:</strong>
+  <%= @tablebooking.table_id %>
+</p>
+<p>
+  <strong>Guestlist ID:</strong>
+  <%= link_to @tablebooking.event.title, event_path(@event) %>
+</p>
