@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :messages
   get 'callback/index'
-  post '/' => 'callback#sent_data'
+  post '/' => 'callback#received_data'
   get 'callback/received_data'
   root 'dashboards#index'
 
