@@ -19,15 +19,11 @@ module Api
           render json: {status: 'SUCCESS', message:'Saved guest', data:guest},status: :ok
         else
           render json: {status: 'ERROR', message:'Guest not saved',
-          data:guest.errors},status: :unprocessable_entity
+          data:guest.errors.valid_guest_creation},status: :unprocessable_entity
         end
       end
 
       private
-
-      def record_not_found
-        render :text => "404 Not Found", :status => 404
-      end
 
       def guest_params
         params.permit(:guest, :guestlist_id, :first_name, :last_name, :gender, :event_id, :guestlist, :ambassador_id, :ambassador_name, :event_id, :ambassador, :valid_guest_creation)
