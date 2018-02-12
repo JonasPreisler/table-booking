@@ -18,7 +18,7 @@ class Guest < ApplicationRecord
         Ambassador.where("lower(name) = ?",self.ambassador_name.downcase).any?
       else
         render json: {status: 'ERROR', message:'Guest not saved',
-        errors.add(:base, 'Sorry Wrong Ambassador')
+        data:guest.errors},status: :unprocessable_entity
       end
     end
 end
