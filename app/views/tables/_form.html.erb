@@ -2,7 +2,14 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :table_number %>
+
+
+    <div class="col-sm-10">
+      <label class="control-label">Table:</label>
+      <%= f.select :table_id, Table.all.map{ |m| [m.id]}, {}, placeholder: "Select Table", class: "form-control" %>
+    </div>
+
+
     <%= f.input :guest %>
     <%= f.input :first_name %>
     <%= f.input :last_name %>
