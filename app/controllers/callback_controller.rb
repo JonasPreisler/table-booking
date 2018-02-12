@@ -28,13 +28,13 @@ class CallbackController < ApplicationController
     enteries = data["entry"]
     enteries.each do |entry|
       entry["messaging"].each do |messaging|
-        sender = messaging ["sender"]["id"]
+        sender = messaging ["recipient"]["id"]
         text = messaging["message"]["text"]
-        myjson = {"recipient": {"id": "#{sender}"}, "message": {"text": "text"}}
+        myjson = {"sender": {"id": "#{recipient}"}, "message": {"text": "text"}}
         puts HTTP.post(url, json: myjson)
       end
     end
-    render "received_data"
+    render "sent_data"
   end
 
   def url
