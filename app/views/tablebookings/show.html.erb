@@ -1,20 +1,33 @@
-<p id="notice"><%= notice %></p>
+<p style="font-size:26px">
+<div class="content">
+    <!-- Dynamic Table Simple -->
+    <div class="block">
+        <div class="block-header">
+        <div class="block-content table-responsive">
+            <table class="table table-striped js-dataTable-full-pagination">
+              <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @tablebooking.first_name %>
-</p>
+              <p>
+                <strong>First name:</strong>
+                <%= @tablebooking.first_name %>
+              </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @tablebooking.last_name %>
-</p>
+              <p>
+                <strong>Last name:</strong>
+                <%= @tablebooking.last_name %>
+              </p>
+               
+              <p>
+                <strong>Table ID:</strong>
+                <%= @tablebooking.table_id %>
+              </p>
+              <p>
+                <strong>Event:</strong>
+                <%= @tablebooking.event.title %>
+              </p>
 
-<p>
-  <strong>Table ID:</strong>
-  <%= @tablebooking.table_id %>
-</p>
-<p>
-  <strong>Event:</strong>
-  <%= @tablebooking.event.title %>
-</p>
+              </table>
+            </table>
+        </div>
+    </div> 
+</div>

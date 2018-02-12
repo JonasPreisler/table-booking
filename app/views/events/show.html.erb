@@ -1,14 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
 
-
-<p id="notice"><%= notice %></p>
-
-
-
-<!-- Page Header -->
 <div class="content bg-gray-lighter">
     <div class="row items-push">
         <div class="col-sm-7">
@@ -17,6 +10,8 @@
                 <td><%= @event.date %></td>
             </h1>
         </div>
+        <%= link_to 'New Guestlist', new_guestlist_path, class: "btn btn-xl btn-default button-new-2" %>
+
         <div class="col-sm-5 text-right hidden-xs">
             <ol class="breadcrumb push-10-t">
                 <li>Dashboard</li>

@@ -1,27 +1,41 @@
-<%= simple_form_for(@tablebooking) do |f| %>
-  <%= f.error_notification %>
+<div class="content">
+    <!-- Dynamic Table Simple -->
+    <div class="block">
+        <div class="block-header">
+        <div class="block-content table-responsive">
+            <table class="table table-striped js-dataTable-full-pagination">
+              <table>
 
 
-    <div class="field">
-      <%= f.input :first_name, placeholder: "First Name" %>
-    </div>
-
-    <div class="field">
-      <%= f.input :last_name, placeholder: "Last Name" %>
-    </div>
+                <%= simple_form_for(@tablebooking) do |f| %>
+                  <%= f.error_notification %>
 
 
-    <div class="col-sm-10">
-      <label class="control-label">Table:</label>
-      <%= f.select :table_id, Table.all.map{ |m| [m.id]}, {}, placeholder: "Select Table", class: "form-control" %>
-    </div>
+                    <div class="field">
+                      <%= f.input :first_name, placeholder: "First Name" %>
+                    </div>
 
-    <div class="col-sm-10">
-      <label class="control-label">Event:</label>
-      <%= f.select :event_id,  Event.all.map{ |m| [m.title,m.id]}, {}, placeholder: "Select event", class: "form-control" %>
-    </div>
+                    <div class="field">
+                      <%= f.input :last_name, placeholder: "Last Name" %>
+                    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+
+                    <div class="col-sm-10">
+                      <label class="control-label">Table:</label>
+                      <%= f.select :table_id, Table.all.map{ |m| [m.id]}, {}, placeholder: "Select Table", class: "form-control" %>
+                    </div>
+
+                    <div class="col-sm-10">
+                      <label class="control-label">Event:</label>
+                      <%= f.select :event_id,  Event.all.map{ |m| [m.title,m.id]}, {}, placeholder: "Select event", class: "form-control" %>
+                    </div>
+
+                  <div class="form-actions">
+                    <%= f.button :submit, class: "btn btn-xl btn-default button-new" %>
+                  </div>
+                <% end %>
+              </table>
+            </table>
+        </div>
+    </div> 
+</div>
