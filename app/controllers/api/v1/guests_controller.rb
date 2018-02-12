@@ -16,7 +16,7 @@ module Api
       def create
         guest = Guest.new(guest_params)
         if guest.save
-          render json: {status: 'SUCCESS', message:'Saved guest', data:guest, location: new_table_path},status: :ok
+          render json: {status: 'SUCCESS', message:'Saved guest', data:guest },status: :ok
         else
           render json: {status: 'ERROR', message:'Guest not saved',
           data:guest.errors},status: :unprocessable_entity
@@ -26,7 +26,7 @@ module Api
       private
 
       def guest_params
-        params.permit(:guest, :guestlist_id, :first_name, :last_name, :gender, :event_id, :guestlist, :ambassador_id, :ambassador_name, :event_id, :ambassador, :table)
+        params.permit(:guest, :guestlist_id, :first_name, :last_name, :gender, :event_id, :guestlist, :ambassador_id, :ambassador_name, :event_id, :ambassador, :table_id)
       end
     end
   end
