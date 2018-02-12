@@ -26,7 +26,7 @@ module Api
       private
 
       def guest_params
-        params.permit(:table_id, :number, :guest, :first_name, :last_name)
+        params.permit(:table_id, :number, :guest, :first_name, :last_name, :guestlist_id, :event_title)
       end
     end
   end

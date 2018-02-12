@@ -10,6 +10,7 @@ class TablesController < ApplicationController
   # GET /tables/1
   # GET /tables/1.json
   def show
+    @guestlists = @table.guestlist_id
   end
 
   # GET /tables/new
@@ -69,6 +70,6 @@ class TablesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def table_params
-      params.require(:table).permit(:number, :guest, :first_name, :last_name)
+      params.require(:table).permit(:number, :guest, :first_name, :last_name, :guestlist_id, :event_title)
     end
 end
