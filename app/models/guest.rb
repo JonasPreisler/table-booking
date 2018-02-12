@@ -17,7 +17,7 @@ class Guest < ApplicationRecord
       if
         Ambassador.where("lower(name) = ?",self.ambassador_name.downcase).any?
       else
-        render json: {errors.add(:base, 'Sorry Wrong Ambassador')}
+        errors.add(:base, 'Sorry Wrong Ambassador')
       end
     end
 end

@@ -10,5 +10,4 @@ class Guestlist < ApplicationRecord
       Ambassador.where(id: self.ambassador.reject(&:empty?)).map(&:name).join(",")
     end
 
-
 end
