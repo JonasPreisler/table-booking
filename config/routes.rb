@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :tablebookings
   get 'callback/index'
   post '/' => 'callback#received_data'
   get 'callback/received_data'
   root 'dashboards#index'
 
+  resources :tablebookings
   resources :tables
   resources :messages
   resources :ambassadors

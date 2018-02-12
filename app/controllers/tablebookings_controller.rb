@@ -12,6 +12,7 @@ class TablebookingsController < ApplicationController
   def show
     @guests = @tablebooking.guests.order('created_at DESC')
     @tables = @tablebooking.table_id
+    @events = @tablebooking.event.title
   end
 
   # GET /tablebookings/new
