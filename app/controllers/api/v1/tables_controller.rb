@@ -4,28 +4,28 @@ module Api
       rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
 
       def index
-        guests = Guest.guest('created_at DESC');
-        render json: {status: 'SUCCESS', message:'Loaded guests', data:guests},status: :ok
+        tables = Table.table('created_at DESC');
+        render json: {status: 'SUCCESS', message:'Loaded tables', data:table},status: :ok
       end
 
       def show
-        guest = Guest.find(params[:id])
-        render json: {status: 'SUCCESS', message:'Loaded guest', data:guest},status: :ok
+        table = Table.find(params[:id])
+        render json: {status: 'SUCCESS', message:'Loaded Table', data:table},status: :ok
       end
 
       def create
-        guest = Guest.new(guest_params)
-        if guest.save
-          render json: {status: 'SUCCESS', message:'Saved guest', data:guest},status: :ok
+        table = Table.new(table_params)
+        if table.save
+          render json: {status: 'SUCCESS', message:'Saved Table', data:table},status: :ok
         else
-          render json: {status: 'ERROR', message:'Guest not saved',
-          data:guest.errors},status: :unprocessable_entity
+          render json: {status: 'ERROR', message:'Table not saved',
+          data:table.errors},status: :unprocessable_entity
         end
       end
 
       private
 
-      def guest_params
+      def table_params
         params.permit(:table_id, :number, :guest, :first_name, :last_name, :guestlist_id, :event_title)
       end
     end
