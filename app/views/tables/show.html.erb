@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @table.first_name %>
+</p>
+<p>
+  <strong>Last name:</strong>
+  <%= @table.last_name %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @table.number %>
+</p>
+
+<p>
+  <strong>Guest:</strong>
+  <%= @table.guest %>
+</p>
+
+<%= link_to 'Edit', edit_table_path(@table) %> |
+<%= link_to 'Back', tables_path %>

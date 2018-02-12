@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :tables
   resources :messages
   get 'callback/index'
   post '/' => 'callback#received_data'
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   resources :events
   namespace 'api' do
     namespace 'v1' do
+      resources :tables
       resources :orders
       resources :guests
       resources :guestlists

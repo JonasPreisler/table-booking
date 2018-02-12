@@ -10,24 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180101164756) do
+ActiveRecord::Schema.define(version: 20180212021606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "citext"
 
-  create_table "ambassadors", primary_key: "name", id: :citext, force: :cascade do |t|
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+  create_table "acts", force: :cascade do |t|
+    t.date     "date"
+    t.time     "time"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "youtube"
+    t.string   "image"
+    t.string   "scene"
+    t.integer  "scene_id"
+  end
+
+  create_table "ambassadors", primary_key: "name", id: :string, force: :cascade do |t|
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.integer  "guest"
     t.integer  "guestlist"
     t.integer  "event"
     t.integer  "guestlist_id"
     t.integer  "guest_id"
     t.string   "slug"
-    t.integer  "availability", default: 0
-    t.index ["name"], name: "index_ambassadors_on_name", unique: true, using: :btree
     t.index ["slug"], name: "index_ambassadors_on_slug", unique: true, using: :btree
+  end
+
+  create_table "amenities", force: :cascade do |t|
+    t.string   "wifi"
+    t.integer  "accident"
+    t.string   "facility"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "concerts", force: :cascade do |t|
+    t.string   "act"
+    t.string   "scene"
+    t.time     "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "customers", force: :cascade do |t|
@@ -38,6 +64,14 @@ ActiveRecord::Schema.define(version: 20180101164756) do
     t.text     "customer_address"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "days", force: :cascade do |t|
+    t.string   "concert"
+    t.string   "act"
+    t.string   "scene"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "events", force: :cascade do |t|
@@ -94,11 +128,12 @@ ActiveRecord::Schema.define(version: 20180101164756) do
     t.string   "guestlist_type"
     t.integer  "guestlist"
     t.string   "ambassador"
-    t.citext   "ambassador_name"
+    t.string   "ambassador_name"
     t.integer  "ambassador_id"
     t.integer  "event_id"
     t.string   "event_title"
     t.string   "girl_name"
+    t.integer  "table"
   end
 
   create_table "measurements", force: :cascade do |t|
@@ -130,6 +165,13 @@ ActiveRecord::Schema.define(version: 20180101164756) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "news", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "orders", force: :cascade do |t|
     t.integer  "customer_id"
     t.integer  "staff_id"
@@ -151,6 +193,16 @@ ActiveRecord::Schema.define(version: 20180101164756) do
     t.index ["staff_id"], name: "index_orders_on_staff_id", using: :btree
   end
 
+  create_table "reservations", force: :cascade do |t|
+    t.string   "therapist_id"
+    t.string   "email"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.datetime "datetime"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "salaries", force: :cascade do |t|
     t.integer  "staff_id"
     t.date     "salary_date"
@@ -159,6 +211,17 @@ ActiveRecord::Schema.define(version: 20180101164756) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["staff_id"], name: "index_salaries_on_staff_id", using: :btree
+  end
+
+  create_table "scenes", force: :cascade do |t|
+    t.string   "act"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "image"
+    t.date     "date"
+    t.time     "time"
+    t.integer  "act_id"
   end
 
   create_table "staffs", force: :cascade do |t|
@@ -173,6 +236,17 @@ ActiveRecord::Schema.define(version: 20180101164756) do
     t.datetime "updated_at",                null: false
   end
 
+  create_table "tables", force: :cascade do |t|
+    t.integer  "number"
+    t.integer  "guest"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "event_id"
+    t.string   "event_title"
+  end
+
   create_table "taggings", force: :cascade do |t|
     t.integer  "event_id"
     t.integer  "tag_id"
@@ -182,6 +256,14 @@ ActiveRecord::Schema.define(version: 20180101164756) do
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "therapists", force: :cascade do |t|
+    t.string   "email"
+    t.string   "first_name"
+    t.string   "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,6 +1,6 @@
 module Api
   module V1
-    class GuestsController < ApplicationController
+    class TablesController < ApplicationController
       rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
 
       def index
@@ -26,7 +26,7 @@ module Api
       private
 
       def guest_params
-        params.permit(:guest, :guestlist_id, :first_name, :last_name, :gender, :event_id, :guestlist, :ambassador_id, :ambassador_name, :event_id, :ambassador, :table)
+        params.permit(:table_id, :number, :guest, :first_name, :last_name)
       end
     end
   end
