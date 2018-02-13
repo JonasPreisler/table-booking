@@ -39,11 +39,10 @@
                 <tbody>
                   <% @tablebookings.each do |tablebooking| %>
                     <tr>
-                      <td><%= link_to tablebooking.event.title %></td>
+                      <td><%= tablebooking.event.title %></td>
                       <td><%= tablebooking.table_id %></td>
                       <td><%= tablebooking.first_name %></td>
                       <td><%= tablebooking.last_name %></td>
-                      <td><%= link_to 'View', tablebooking_path(tablebooking.id), :class=>'btn btn-xs btn-default' %></td>
                     </tr>
                   <% end %>
                 </tbody>

@@ -19,3 +19,14 @@
   padding-top: 300px;
   text-align: center;
 }
+
+.button-new-3 {
+    background-color: #3d094b;
+    color: #fff !important;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
