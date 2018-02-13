@@ -240,7 +240,7 @@
 
         <title><%= yield(:title) %> | ExclusiveAI</title>
 
-        <meta name="description" content="NIGHTCLUB MESSENGER MARKETING">
+        <meta name="description" content="VENUE CONVERSATIONAL MARKETING">
         <meta name="author" content="JONAS PREISLER">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -267,18 +267,7 @@
         <!-- Page -->
         <div class="page animsition" data-animsition-in="fade-in" data-animsition-out="fade-out">
             <div class="page-content">
-                <div class="page-brand-info">
-                    <div class="brand">
-                        <%= image_tag 'logo.png' %>
-                    </div>
-                    <p class="font-size-20 dtext">Get More Guests Through The Door With Messenger</p>
-                    
-                <br>
-                <%= link_to 'Log In', new_user_session_path, class: "font-size-20 dtext" %>
-                <br><br><br>
-                <%= link_to 'Sign Up', new_user_registration_path, class: "font-size-20 dtext" %>
-                </div>
-
+                <div style="color:#fff" class="front-phrase"><h1>Disruptive Event Marketing</h1></div>
                 <div class="page-login-main">
                     <div class="brand visible-xs">
                         <a class="h3 text-white" href="index.html">
@@ -301,11 +290,6 @@
                     <% end %>
                     
                     <%= yield %>
-
-                    <footer class="page-copyright">
-                        <p>BY <a class="font-w600" href="http://facebook.com/digitalspartanpage" target="_blank"> JONAS PREISLER</a></p>
-                        <p>© <span><%= Time.current.year %></span>. All RIGHT RESERVED.</p>
-                    </footer>
                 </div>
             </div>
         </div>

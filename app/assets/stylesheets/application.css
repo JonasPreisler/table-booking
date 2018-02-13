@@ -14,3 +14,8 @@
  *= require_self
  */
 
+.front-phrase {
+  padding: 150px;
+  padding-top: 300px;
+  text-align: center;
+}
