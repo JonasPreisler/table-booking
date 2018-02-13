@@ -44,7 +44,7 @@
                       <td><%= guest.first_name %></td>
                       <td><%= guest.last_name %></td>
                       <td><%= guest.gender %></td>
-                      <td><%= link_to guest.guestlist.event.title, guestlist_path(guest.guestlist.id) %></td>
+                      <td><%= link_to guest.guestlist.event.title, guestlist_path(guest.guestlist.id) if event? %></td>
                     </tr>
                   <% end %>
                 </tbody>
