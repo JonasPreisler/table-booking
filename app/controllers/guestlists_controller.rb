@@ -5,6 +5,7 @@ class GuestlistsController < ApplicationController
   # GET /guestlists.json
   def index
     @guestlists = Guestlist.all.order('created_at DESC')
+    @events = Event.all.order('created_at DESC')
   end
 
   # GET /guestlists/1
