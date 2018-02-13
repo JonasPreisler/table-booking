@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post '/' => 'callback#received_data'
   get 'callback/received_data'
   root 'dashboard#index'
+  
 
   resources :tablebookings
   resources :tables
