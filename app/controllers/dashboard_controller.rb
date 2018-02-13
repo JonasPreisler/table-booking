@@ -27,11 +27,11 @@ class DashboardController < ApplicationController
   	@order_month_due = (@order_month_total - @order_month_paid)
 
     @customers = Customer.all.count
-
     @guests = Guest.all.count
     @events = Event.all.count
     @ambassadors = Ambassador.all.count
     @guestlists = Guestlist.all.count
+    @tablebookings = Tablebooking.all.count
 
   end
 end
